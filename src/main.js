@@ -137,7 +137,7 @@ const createTaskTemplate = () => {
             </svg>
           </div>
           <div class="card__textarea-wrap">
-            <p class="card__text">Example task with default color.</p>
+            <p class="card__text">Example default task with default color.</p>
           </div>
           <div class="card__settings">
             <div class="card__details">
@@ -188,7 +188,7 @@ const createTaskEditTemplate = () => {
                       type="text"
                       placeholder=""
                       name="date"
-                      value="23 September 16:15"
+                      value="23 September"
                     />
                   </label>
                 </fieldset>
@@ -369,7 +369,7 @@ render(siteMainElement, createFilterTemplate(), `beforeend`);
 render(siteMainElement, createBoardTemplate(), `beforeend`);
 
 const boardElement = siteMainElement.querySelector(`.board`);
-const taskListElement  = boardElement.querySelector(`.board__tasks`);
+const taskListElement = boardElement.querySelector(`.board__tasks`);
 
 render(taskListElement, createTaskEditTemplate(), `beforeend`);
 
