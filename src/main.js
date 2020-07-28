@@ -131,14 +131,17 @@ const createTaskTemplate = () => {
               favorites
             </button>
           </div>
+
           <div class="card__color-bar">
             <svg class="card__color-bar-wave" width="100%" height="10">
               <use xlink:href="#wave"></use>
             </svg>
           </div>
+
           <div class="card__textarea-wrap">
-            <p class="card__text">Example default task with default color.</p>
+            <p class="card__text">Example task with default color.</p>
           </div>
+
           <div class="card__settings">
             <div class="card__details">
               <div class="card__dates">
@@ -166,6 +169,7 @@ const createTaskEditTemplate = () => {
               <use xlink:href="#wave"></use>
             </svg>
           </div>
+
           <div class="card__textarea-wrap">
             <label>
               <textarea
@@ -175,12 +179,14 @@ const createTaskEditTemplate = () => {
               >This is example of task edit. You can set date and chose repeating days and color.</textarea>
             </label>
           </div>
+
           <div class="card__settings">
             <div class="card__details">
               <div class="card__dates">
                 <button class="card__date-deadline-toggle" type="button">
                   date: <span class="card__date-status">yes</span>
                 </button>
+
                 <fieldset class="card__date-deadline">
                   <label class="card__input-deadline-wrap">
                     <input
@@ -188,13 +194,15 @@ const createTaskEditTemplate = () => {
                       type="text"
                       placeholder=""
                       name="date"
-                      value="23 September"
+                      value="23 September 16:15"
                     />
                   </label>
                 </fieldset>
+
                 <button class="card__repeat-toggle" type="button">
                   repeat:<span class="card__repeat-status">yes</span>
                 </button>
+
                 <fieldset class="card__repeat-days">
                   <div class="card__repeat-days-inner">
                     <input
@@ -274,6 +282,7 @@ const createTaskEditTemplate = () => {
                 </fieldset>
               </div>
             </div>
+
             <div class="card__colors-inner">
               <h3 class="card__colors-title">Color</h3>
               <div class="card__colors-wrap">
@@ -341,6 +350,7 @@ const createTaskEditTemplate = () => {
               </div>
             </div>
           </div>
+
           <div class="card__status-btns">
             <button class="card__save" type="submit">save</button>
             <button class="card__delete" type="button">delete</button>
@@ -355,7 +365,7 @@ const createLoadMoreButtonTemplate = () => {
   return (
     `<button class="load-more" type="button">load more</button>`
   );
-};
+}
 
 const render = (container, template, place) => {
   container.insertAdjacentHTML(place, template);
@@ -369,7 +379,7 @@ render(siteMainElement, createFilterTemplate(), `beforeend`);
 render(siteMainElement, createBoardTemplate(), `beforeend`);
 
 const boardElement = siteMainElement.querySelector(`.board`);
-const taskListElement = boardElement.querySelector(`.board__tasks`);
+const taskListElement  = boardElement.querySelector(`.board__tasks`);
 
 render(taskListElement, createTaskEditTemplate(), `beforeend`);
 
