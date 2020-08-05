@@ -33,19 +33,23 @@ const generateDate = () => {
   return new Date(currentDate);
 };
 
+const genegateRepeating = () => {
+  return {
+    mo: false,
+    tu: false,
+    we: Boolean(getRandomInteger(0, 1)),
+    th: false,
+    fr: Boolean(getRandomInteger(0, 1)),
+    sa: false,
+    su: false,
+  };
+};
+
 export const generateTask = () => {
   return {
     description: generateDescription(),
     dueDate: generateDate(),
-    repeating: {
-      mo: false,
-      tu: false,
-      we: false,
-      th: false,
-      fr: false,
-      sa: false,
-      su: false,
-    },
+    repeating: genegateRepeating(),
     color: `black`,
     isArchive: false,
     isFavorite: false,
