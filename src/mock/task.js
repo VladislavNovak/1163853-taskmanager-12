@@ -46,10 +46,21 @@ const genegateRepeating = () => {
 };
 
 export const generateTask = () => {
+  const dueDate = generateDate();
+  const repeating = (dueDate === null) ? genegateRepeating() : {
+    mo: false,
+    tu: false,
+    we: false,
+    th: false,
+    fr: false,
+    sa: false,
+    su: false,
+  };
+
   return {
     description: generateDescription(),
-    dueDate: generateDate(),
-    repeating: genegateRepeating(),
+    dueDate,
+    repeating,
     color: `black`,
     isArchive: false,
     isFavorite: false,
