@@ -33,7 +33,7 @@ const generateDate = () => {
   return new Date(currentDate);
 };
 
-const genegateRepeating = () => {
+const generateRepeating = () => {
   return {
     mo: false,
     tu: false,
@@ -54,7 +54,7 @@ const getRandomColor = () => {
 
 export const generateTask = () => {
   const dueDate = generateDate();
-  const repeating = (dueDate === null) ? genegateRepeating() : {
+  const repeating = (dueDate === null) ? generateRepeating() : {
     mo: false,
     tu: false,
     we: false,
