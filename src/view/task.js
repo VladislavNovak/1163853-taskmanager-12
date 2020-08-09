@@ -1,26 +1,11 @@
-const isExpired = (dueDate) => {
-  if (dueDate === null) {
-    return false;
-  }
-
-  let currentDate = new Date();
-  currentDate.setHours(23, 59, 59, 999);
-  currentDate = new Date(currentDate);
-
-  return currentDate.getTime() > dueDate.getTime();
-};
-
-const isRepeating = (repeating) => {
-  return Object.values(repeating).some(Boolean);
-};
+import {isTaskExpired, isTaskRepeating, humanizeTaskDueDate} from "../utils";
 
 export const createTaskTemplate = (task) => {
   const {color, description, dueDate, repeating, isArchive, isFavorite} = task;
 
-  const date = (dueDate !== null) ? dueDate.toLocaleString(`en-US`, {day: `numeric`, month: `long`}) : ``;
-
-  const deadLineClassName = isExpired(dueDate) ? `card--deadline` : ``;
-  const repeatClassName = isRepeating(repeating) ? `card--repeat` : ``;
+  const date = (dueDate !== null) ? humanizeTaskDueDate(dueDate) : ``;
+  const deadLineClassName = isTaskExpired(dueDate) ? `card--deadline` : ``;
+  const repeatClassName = isTaskRepeating(repeating) ? `card--repeat` : ``;
   const archiveClassName = isArchive ? `card__btn--archive card__btn--disabled` : `card__btn--archive`;
   const favoriteClassName = isFavorite ? `card__btn--favorites card__btn--disabled` : `card__btn--favorites`;
 
