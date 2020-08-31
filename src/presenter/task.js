@@ -77,14 +77,7 @@ export default class Task {
   }
 
   _handleFavoriteClick() {
-    this._changeData(
-        Object.assign(
-            {},
-            this._task,
-            {
-              isFavorite: !this._task.isFavorite
-            }
-        )
+    this._changeData(Object.assign({},this._task,{isFavorite: !this._task.isFavorite})
     );
   }
 
