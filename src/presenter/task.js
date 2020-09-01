@@ -68,6 +68,7 @@ export default class Task {
   _escKeyDownHandler(evt) {
     if (evt.key === `Escape` || evt.key === `Esc`) {
       evt.preventDefault();
+      this._taskEditComponent.reset(this._task);
       this._replaceFormToCard();
     }
   }
@@ -77,7 +78,14 @@ export default class Task {
   }
 
   _handleFavoriteClick() {
-    this._changeData(Object.assign({},this._task,{isFavorite: !this._task.isFavorite})
+    this._changeData(
+        Object.assign(
+            {},
+            this._task,
+            {
+              isFavorite: !this._task.isFavorite
+            }
+        )
     );
   }
 
