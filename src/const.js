@@ -1,3 +1,4 @@
+
 export const COLORS = [`black`, `yellow`, `blue`, `green`, `pink`];
 
 export const SortType = {
@@ -25,4 +26,10 @@ export const FilterType = {
   FAVORITES: `favorites`,
   REPEATING: `repeating`,
   ARCHIVE: `archive`
+};
+
+export const MenuItem = {
+  ADD_NEW_TASK: `ADD_NEW_TASK`,
+  TASKS: `TASKS`,
+  STATISTICS: `STATISTICS`
 };
