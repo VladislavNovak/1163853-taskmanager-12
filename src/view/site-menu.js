@@ -58,11 +58,11 @@ export default class SiteMenu extends AbstractView {
     this.getElement().addEventListener(`change`, this._menuClickHandler);
   }
 
-  // setMenuItem(menuItem) {
-  //   const item = this.getElement().querySelector(`[value=${menuItem}]`);
+  setMenuItem(menuItem) {
+    const item = this.getElement().querySelector(`[value=${menuItem}]`);
 
-  //   if (item !== null) {
-  //     item.checked = true;
-  //   }
-  // }
+    if (item !== null) {
+      item.checked = true;
+    }
+  }
 }
